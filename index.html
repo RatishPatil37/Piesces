@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historic Indian Figures Fact Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/shadcn/dist/shadcn.min.css" rel="stylesheet">
+    <style>
+        /* Additional custom styles mimicking Material UI */
+        body{
+            background-color:brown;
+        }
+        .fact-box {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Roboto', sans-serif;
+            background-color:bisque;
+        }
+
+        h2 {
+            font-family: cursive;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        button {
+            color: white;
+            padding: 12px 24px 35px ;
+            border: none;
+            border-radius: 25px;
+            font-size: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.4);
+            background-color:dodgerblue
+        }
+
+        .container {
+            box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            background-color: #ffffff;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-yellow-100 flex items-center justify-center h-screen">
+    <div class="container max-w-xl p-5 shadcn">
+        <h1 class="text-3xl font-bold text-center mb-2">Fun Facts Generator</h1>
+        <h2 class="text-2xl font-bold text-center mb-4">Historic Indian Figures Fact Generator</h2>
+        <div id="fact" class="fact-box shadcn-soft"></div>
+        <button id="generateFact" class="mt-5">
+            Generate Fact
+        </button>
+    </div>
+
+    <script>
+        const facts = [
+            {"fact": "Mahatma Gandhi led India to independence from British rule."},
+            {"fact": "Rabindranath Tagore wrote the national anthem of India."},
+            {"fact": "Chandragupta Maurya was the founder of the Maurya Empire in ancient India."},
+            {"fact": "Dr. A.P.J. Abdul Kalam was known as the Missile Man of India."},
+            {"fact": "Rani Lakshmi Bai played a pivotal role in the Indian Rebellion of 1857."},
+            {"fact": "Swami Vivekananda introduced Indian philosophies of Vedanta and Yoga to the Western world."},
+            {"fact": "Bhimrao Ramji Ambedkar was the principal architect of the Constitution of India."},
+            {"fact": "Sardar Vallabhbhai Patel was instrumental in the political integration of India."},
+            {"fact": "Indira Gandhi was the first and, to date, the only female Prime Minister of India."},
+            {"fact": "Subhas Chandra Bose was a prominent freedom fighter in India and led the Indian National Army."}
+        ];
+
+        document.getElementById('generateFact').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[randomIndex].fact;
+        });
+    </script>
+</body>
+</html>
